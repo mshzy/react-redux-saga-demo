@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { directive } from '@babel/types';
 import { connect } from "react-redux";
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <div>
@@ -19,10 +18,8 @@ const mapStateToProps = state => {
     times: state.times
   }
 }
-const mapDispatchToProps = dispatch => {
-  return {
-    addOne: () => dispatch({ type: 'add', payload: 1 })
-  }
+const addOne = () => {
+  return { type: 'add', payload: 1 }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, {addOne})(App)
