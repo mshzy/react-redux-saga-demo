@@ -7,7 +7,7 @@ class App extends Component {
       <div>
         <span>你点击了 {this.props.times} 次</span>
         <br />
-        <button onClick={this.props.addOne.bind(this)}>点击这里！</button>
+        <button onClick={this.props.addOne1sLater.bind(this)}>点击这里！</button>
       </div>
     )
   }
@@ -18,8 +18,8 @@ const mapStateToProps = state => {
     times: state.times
   }
 }
-const addOne = () => {
-  return { type: 'add', payload: 1 }
+const addOne1sLater = () => {
+  return { type: 'preAddOne', payload: 3 }
 }
 
-export default connect(mapStateToProps, {addOne})(App)
+export default connect(mapStateToProps, {addOne1sLater})(App)
