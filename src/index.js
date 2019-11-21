@@ -18,7 +18,7 @@ const reducer = (states, action) => {
 }
 
 const sagaMiddleware = createSagaMiddleware()
-const store = createStore(reducer, { times: 0 }, applyMiddleware(sagaMiddleware))
+const store = createStore(reducer, { times: 5 }, applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(

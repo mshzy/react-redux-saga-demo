@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 class App extends Component {
   render() {
+    console.log(this.props)
     return (
       <div>
         <span>你点击了 {this.props.times} 次</span>
