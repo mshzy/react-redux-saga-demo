@@ -22,4 +22,4 @@ const addOne1sLater = () => {
   return { type: 'preAddOne', payload: 3 }
 }
 
-export default connect(mapStateToProps, {addOne1sLater})(App)
+export default connect(mapStateToProps, { addOne1sLater })(App)

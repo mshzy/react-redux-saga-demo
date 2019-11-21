@@ -6,24 +6,26 @@ import { Provider } from "react-redux";
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas/sagas'
 
-const reducer = (state = { times: 0 }, action) => {
+const reducer = (states, action) => {
+  const state = JSON.parse(JSON.stringify(states))  //不建议这样做，性能开销大
   switch (action.type) {
     case 'addOne':
-      return { times: state.times + action.payload }
+      state.times += action.payload
+      return state
     default:
       return state
   }
 }
 
 const sagaMiddleware = createSagaMiddleware()
-const store = createStore(reducer, applyMiddleware(sagaMiddleware))
+const store = createStore(reducer, { times: 0}, applyMiddleware(sagaMiddleware))
 sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <Provider
     store={store}
   >
-    <App></App>
+    <App xxx='yyyyy'></App>
   </Provider>,
   document.querySelector('#root'));
 
