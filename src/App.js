@@ -15,7 +15,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    times: state.times
+    ...state
   }
 }
 const addOne1sLater = () => {
