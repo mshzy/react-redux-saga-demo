@@ -4,7 +4,7 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 function* addOne1sLater(action) {
   yield call(delay, 1000)
-  yield put({ type: 'addOne', payload:action.payload})
+  yield put({ type: 'addOne', payload: action.payload })
 }
 
 function* watchAddOne1sLater() {
