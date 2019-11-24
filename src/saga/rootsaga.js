@@ -7,7 +7,12 @@ function* addOne1sLater(action) {
   yield put({ type: 'addOne', payload: action.payload })
 }
 
-export default function* watchAddOne1sLater() {
+function* watchAddOne1sLater() {
   yield takeEvery('preAddOne', addOne1sLater)
 }
 
+export default function* rootsaga(){
+  yield all([
+    watchAddOne1sLater()
+  ])
+}
