@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { addOne1sLater } from './action/actions'
 
 class App extends Component {
   render() {
@@ -17,9 +18,6 @@ const mapStateToProps = state => {
   return {
     ...state
   }
-}
-const addOne1sLater = () => {
-  return { type: 'preAddOne', payload: 3 }
 }
 
 export default connect(mapStateToProps, { addOne1sLater })(App)
