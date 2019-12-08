@@ -11,7 +11,7 @@
     "redux-saga": "^1.1.3",
     "yarn": "^1.19.1"
   },
-  "homepage" : "https://github.com/setupzhang/react-redux-saga-demo/build",
+  "homepage" : "https://setupzhang.github.io/react-redux-saga-demo/build/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
